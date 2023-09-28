@@ -12,7 +12,7 @@ import os
 import uuid
 from pathlib import Path
 
-import main_linprobe as classification
+from others import main_linprobe as classification
 import submitit
 
 
@@ -53,7 +53,7 @@ class Trainer(object):
         self.args = args
 
     def __call__(self):
-        import main_linprobe as classification
+        import others.main_linprobe as classification
 
         self._setup_gpu_args()
         classification.main(self.args)

@@ -12,7 +12,7 @@ import os
 import uuid
 from pathlib import Path
 
-import main_finetune as classification
+from others import main_finetune as classification
 import submitit
 
 
@@ -53,7 +53,7 @@ class Trainer(object):
         self.args = args
 
     def __call__(self):
-        import main_finetune as classification
+        import others.main_finetune as classification
 
         self._setup_gpu_args()
         classification.main(self.args)

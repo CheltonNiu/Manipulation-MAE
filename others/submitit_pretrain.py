@@ -12,7 +12,7 @@ import os
 import uuid
 from pathlib import Path
 
-import main_pretrain as trainer
+from others import main_pretrain as trainer
 import submitit
 
 
@@ -53,7 +53,7 @@ class Trainer(object):
         self.args = args
 
     def __call__(self):
-        import main_pretrain as trainer
+        import others.main_pretrain as trainer
 
         self._setup_gpu_args()
         trainer.main(self.args)
